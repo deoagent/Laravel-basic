@@ -24,9 +24,16 @@ use App\Http\Controllers\PagesController;
 //     return 'This is user '.$name.' with an id of '.$id;
 // });
 
-Route::get('/', 'App\Http\Controllers\PagesController@index');
-Route::get('/about', 'App\Http\Controllers\PagesController@about');
-Route::get('/services', 'App\Http\Controllers\PagesController@services');
+// Route::get('/', 'App\Http\Controllers\PagesController@index');
+// Route::get('/about', 'App\Http\Controllers\PagesController@about');
+// Route::get('/services', 'App\Http\Controllers\PagesController@services');
+
+Route::get('/', 'PagesController@index');
+Route::get('/about', 'PagesController@about');
+Route::get('/services', 'PagesController@services');
+
+Route::resource('posts', 'PostsController');
+// Route::resource('posts', PostsController::class);
 
 // Route::get('/about', function () {
 //     return view('pages.about');
