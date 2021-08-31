@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
+// use App\Models\Post as ModelsPost;
 use Illuminate\Http\Request;
+// use App\Post;
+use App\Models\Post;
+use Illuminate\Support\Facades\DB;
+
+
 
 class PostsController extends Controller
 {
@@ -13,7 +19,15 @@ class PostsController extends Controller
      */
     public function index()
     {
-        //
+        // $posts = Post::all();
+        
+        //return Post::where('title', 'Post Two')->get();
+        // $posts = DB::select('SELECT * FROM posts');
+        // $posts = Post::orderBy('title', 'desc')->take(1)->get();
+        // $posts = Post::orderBy('title', 'desc')->get();
+
+         $posts = Post::orderBy('title', 'desc')->paginate(11);
+        return view('posts.index')->with('posts', $posts);
     }
 
     /**
@@ -45,7 +59,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::find($id);
+        return view('posts.show')->with('post', $post);
     }
 
     /**
