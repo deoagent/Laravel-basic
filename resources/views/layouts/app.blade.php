@@ -9,7 +9,14 @@
     <body >
       @include('inc.navbar')
       <div class="container">
+        @include('inc.messages')
       @yield('content')
+      
       </div>
+      <script src="/node_modules/ckeditor4/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'article-ckeditor' );
+    </script>
+    
     </body>
 </html>
