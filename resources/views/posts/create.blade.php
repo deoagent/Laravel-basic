@@ -13,5 +13,5 @@
         </div>
         {{Form::submit('Submit', [ 'class' => 'btn btn-primary'])}}
     {!! Form::close() !!}
-    <script src="//cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+    
 @endsection

@@ -10,5 +10,10 @@
 </div>
 <hr>
 <small>Written on {{$post->created_at}}</small>
-
+<hr>
+<a href="/posts/{{$post->id}}/edit" class="bnt btn-default">Edit</a>
+{!!Form::open(['action' => ['PostsController@destroy', $post->id], 'method' => 'POST', 'class' => 'float-right'])!!}
+{{Form::hidden('_method', 'DELETE')}}
+{{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+{!!Form::close()!!}
 @endsection
