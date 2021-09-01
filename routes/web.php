@@ -48,3 +48,6 @@ Route::resource('posts', 'PostsController');
 // Route::get('/pages', [PagesController::class, 'services']);
 
 // Route::get('/page', 'App\Http\Controllers\PagesController@index');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');
